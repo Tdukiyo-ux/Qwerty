@@ -1,0 +1,155 @@
+/* ===== Base reset ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #e5e5e5;
+  color: #222;
+}
+
+/* ===== Colors & tokens ===== */
+:root {
+  --purple: #3f2dbd;        /* main bar/background */
+  --purple-dark: #2f2190;
+  --text-on-purple: #ffffff;
+  --card-bg: #ffffff;
+  --sidebar-bg: #3f2dbd;
+  --sidebar-text: #ffffff;
+}
+
+/* ===== Top thin bar (Big Deals / Login) ===== */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--purple);
+  color: var(--text-on-purple);
+  padding: 0.3rem 0.8rem;
+  font-size: 0.85rem;
+}
+
+.left-nav,
+.right-nav {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.site-header a {
+  color: var(--text-on-purple);
+  text-decoration: none;
+}
+
+/* Optional separators on right links */
+.right-nav a + a {
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+  padding-left: 0.6rem;
+}
+
+/* ===== Brand + search row ===== */
+.search-header {
+  background-color: #f2f2f2;
+  padding: 0.7rem 0.8rem;
+}
+
+.search-wrapper {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  column-gap: 0.8rem;
+}
+
+/* Logo text top-left */
+.brand {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #0f28e5;
+}
+
+/* Search bar */
+.search-form {
+  display: flex;
+}
+
+.search-form input {
+  flex: 1;
+  padding: 0.45rem 0.6rem;
+  border: 1px solid #bfbfbf;
+  font-size: 0.85rem;
+}
+
+.search-form button {
+  padding: 0.45rem 0.8rem;
+  border: none;
+  background-color: var(--purple);
+  color: var(--text-on-purple);
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+/* Red financing banner on right */
+.promo-row {
+  display: flex;
+  justify-content: flex-end;   /* align item to the right */
+}
+
+.promo-banner {
+  display: inline-flex;        /* size to content, not full width */
+  align-items: center;
+  background-color: #e11d2e;
+  color: #fff;
+  font-weight: bold;
+  font-size: 0.9rem;
+  padding: 0.3rem 0.6rem;      /* small padding around text */
+  border-radius: 2px;
+}
+
+
+/* ===== Main layout: sidebar + grid ===== */
+.layout {
+  display: grid;
+  grid-template-columns: 210px 1fr;
+  gap: 1rem;
+  padding: 0.8rem;
+}
+
+/* Sidebar */
+.sidebar {
+  background-color: var(--sidebar-bg);
+  padding: 0.4rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.sidebar a {
+  display: block;
+  padding: 0.5rem 0.75rem;
+  color: var(--sidebar-text);
+  text-decoration: none;
+  font-size: 0.85rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns [web:72][web:74] */
+  gap: 1rem;                              /* space between cards [web:74] */
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  padding: 0.75rem;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 0.5rem;
+}
